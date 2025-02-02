@@ -1,5 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
 import { Button } from '../ui/button'
+import localImage from "../custom/landing.png"
 
 function Hero() {
   return (
@@ -17,11 +19,12 @@ function Hero() {
         <Button variant="outline">Try Demo</Button>
         <Button>Get Started</Button>
         </div>
-
-        <Image src={'/landing.png'} alt='landing'
+        <Image src={localImage}
+         alt="landing"
         width={1000}
         height={800}
-        className='mt-12 ' />
+        className='mt-12 ' 
+        />
     </div>
   )
 }
