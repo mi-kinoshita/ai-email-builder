@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from '../ui/button'
 import localImage from "../custom/landing.png"
+import SignInButton from './SignInButton'
 
 function Hero() {
   return (
@@ -17,7 +18,7 @@ function Hero() {
         <p className='text-center mt-4'>Longing to impress clients with AI-powered emails but don't have enough time to build them on your own?</p>
     <div className='flex gap-5 mt-6'>
         <Button variant="outline">Try Demo</Button>
-        <Button>Get Started</Button>
+        <SignInButton />
         </div>
         <Image src={localImage}
          alt="landing"
