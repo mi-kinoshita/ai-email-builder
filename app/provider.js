@@ -6,14 +6,17 @@ import {
   UserDetailContext,
   userDetailContext,
 } from "@/context/UserDetailContext";
+import { ScreenSizeContext } from "@/context/ScreenSizeCentext";
 
 function Provider({ children }) {
   const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL);
   const [userDetail, setUserDetail] = useState();
+  const [screenSize, setScreenSize] = useState("desktop");
+
   useEffect(() => {
     if (typeof window !== undefined) {
       const storage = JSON.parse(localStorage.getItem("userDetail"));
-      if (storage?.email || !storage) {
+      if (!storage?.email || !storage) {
       } else {
         setUserDetail(storage);
       }
@@ -24,7 +27,9 @@ function Provider({ children }) {
     <ConvexProvider client={convex}>
       <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
         <UserDetailContext.Provider value={{ userDetail, setUserDetail }}>
-          <div>{children}</div>
+          <ScreenSizeContext.Provider value={{ screenSize, setScreenSize }}>
+            <div>{children}</div>
+          </ScreenSizeContext.Provider>
         </UserDetailContext.Provider>
       </GoogleOAuthProvider>
     </ConvexProvider>
@@ -34,5 +39,9 @@ function Provider({ children }) {
 export default Provider;
 
 export const useUserDetailContext = () => {
-  return useContext(userDetailContext);
+  return useContext(UserDetailContext);
+};
+
+export const useScreenSize = () => {
+  return useContext(ScreenSizeContext);
 };
