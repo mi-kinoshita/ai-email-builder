@@ -43,7 +43,7 @@ export default [
     icon: TextSelectionIcon,
     type: "Text",
     label: "Text",
-    textarea: "Sample Text",
+    content: "Sample Text",
     style: {
       backgroundColor: "#fff",
       color: "#000000",
@@ -62,7 +62,7 @@ export default [
     icon: Image,
     type: "Image",
     label: "Image",
-    imageUrl: "/image.png",
+    imageUrl: "/images/placeholder.png",
     alt: "Image",
     url: "#",
     style: {
@@ -86,13 +86,13 @@ export default [
     type: "Logo",
     label: "Logo",
     imageUrl: "/logo.svg",
-    alt: "logo",
+    alt: "Logo",
     url: "#",
     style: {
       backgroundColor: "#ffffff",
       padding: "10px",
-      height: "30%",
-      width: "30%",
+      height: "auto",
+      width: "auto",
     },
     outerStyle: {
       display: "flex",

@@ -37,7 +37,7 @@ function EditorHeader() {
         >
           <Code />
         </Button>
-        <Button variant="outline">Sent Test Email</Button>
+        <Button variant="outline">Send Test Email</Button>
         <Button>Save Template</Button>
       </div>
     </div>
