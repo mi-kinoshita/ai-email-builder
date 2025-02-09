@@ -45,16 +45,16 @@ export default [
     label: "Text",
     content: "Sample Text",
     style: {
-      backgroundColor: "#fff",
+      backgroundColor: "#ffffff",
       color: "#000000",
       padding: "10px",
       textAlign: "center",
       fontSize: "22px",
       fontWeight: "normal",
-      textTransform: "uppercase", //lowercase , capitilized
+      textTransform: "uppercase", //lowercase
     },
     outerStyle: {
-      backgroundColor: "#fff",
+      backgroundColor: "#ffffff",
       width: "100%",
     },
   },
@@ -78,7 +78,7 @@ export default [
       width: "100%",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: "#fff",
+      backgroundColor: "#ffffff",
     },
   },
   {
@@ -98,7 +98,7 @@ export default [
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: "#fff",
+      backgroundColor: "#ffffff",
       width: "100%",
     },
   },
@@ -119,7 +119,7 @@ export default [
       display: "flex",
       justifyContent: "left",
       alignItems: "center",
-      backgroundColor: "#fff",
+      backgroundColor: "#ffffff",
       width: "100%",
     },
   },
