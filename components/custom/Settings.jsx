@@ -5,6 +5,7 @@ import InputField from "./Settings/InputField";
 import ColorPickerField from "./Settings/ColorPickerField";
 import InputStyleField from "./Settings/InputStyleField";
 import SliderField from "./Settings/SliderField";
+import TextAreaField from "./Settings/TextAreaField";
 
 function Settings() {
   const { selectedElement, setSelectedElement } = useSelectedElement();
@@ -51,9 +52,18 @@ function Settings() {
       <h2 className="font-bold text-xl">Settings</h2>
       {element?.content && (
         <InputField
-          label={"content"}
+          label={"Content"}
           value={element.content}
           onHandleInputChange={(value) => onHandleInputChange("content", value)}
+        />
+      )}
+      {element?.textarea && (
+        <TextAreaField
+          label={"Text"}
+          value={element.textarea}
+          onHandleInputChange={(value) =>
+            onHandleInputChange("textarea", value)
+          }
         />
       )}
       {element?.style?.width && (

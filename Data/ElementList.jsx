@@ -43,7 +43,7 @@ export default [
     icon: TextSelectionIcon,
     type: "Text",
     label: "Text",
-    content: "Sample Text",
+    textarea: "Sample Text",
     style: {
       backgroundColor: "#ffffff",
       color: "#000000",
@@ -51,7 +51,6 @@ export default [
       textAlign: "center",
       fontSize: "22px",
       fontWeight: "normal",
-      textTransform: "uppercase", //lowercase
     },
     outerStyle: {
       backgroundColor: "#ffffff",
