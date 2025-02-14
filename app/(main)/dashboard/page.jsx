@@ -9,7 +9,7 @@ function Dashboard() {
   const { userDetail, setUserDetail } = useUserDetailContext();
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="p-10 md:px-28 lg:px-56 mt-16">
         <div className="flex justify-between items-center">
           <h2 className="front-bold text-3xl">Hello, {userDetail?.name}</h2>

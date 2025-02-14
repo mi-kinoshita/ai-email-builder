@@ -10,6 +10,7 @@ import TextComponent from "../custom/Element/TextComponent";
 import ImageComponent from "../custom/Element/ImageComponent";
 import LogoComponent from "../custom/Element/LogoComponent";
 import DividerComponent from "../custom/Element/DividerComponent";
+import { ArrowDown, ArrowUp, Trash } from "lucide-react";
 
 function ColumnLayout({ layout }) {
   const [dragOver, setDragOver] = useState();
@@ -52,14 +53,51 @@ function ColumnLayout({ layout }) {
     return element?.type;
   };
 
+  const deleteLayout = (layoutId) => {
+    const updateEmailTemplate = emailTemplate?.filter(
+      (item) => item.id != layoutId
+    );
+    setEmailTemplate(updateEmailTemplate);
+    setSelectedElement(null);
+  };
+
+  const moveItemUp = (layoutId) => {
+    const index = emailTemplate.findIndex((item) => item.id === layoutId);
+    if (index > 0) {
+      setEmailTemplate((prevItems) => {
+        const updatedItems = [...prevItems];
+        [updatedItems[index], updatedItems[index - 1]] = [
+          updatedItems[index - 1],
+          updatedItems[index],
+        ];
+        return updatedItems;
+      });
+    }
+  };
+
+  const moveItemDown = (layoutId) => {
+    const index = emailTemplate.findIndex((item) => item.id === layoutId);
+    if (index > 0) {
+      setEmailTemplate((prevItems) => {
+        const updatedItems = [...prevItems];
+        [updatedItems[index], updatedItems[index + 1]] = [
+          updatedItems[index + 1],
+          updatedItems[index],
+        ];
+        return updatedItems;
+      });
+    }
+  };
+
   return (
-    <div>
+    <div className="relative">
       <div
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${layout?.numOfCol},1fr)`,
           gap: "0px",
         }}
+        className={`${selectedElement?.layout?.id == layout?.id && "border border-dashed border-blue-500"}`}
       >
         {Array.from({ length: layout?.numOfCol }).map((_, index) => (
           <div
@@ -75,6 +113,31 @@ function ColumnLayout({ layout }) {
             {GetElementComponent(layout?.[index]) ?? "Drag Element Here"}
           </div>
         ))}
+        {selectedElement?.layout?.id == layout?.id && (
+          <div className="absolute -right-10">
+            <div
+              className="cursor-pointer
+           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
+              onClick={() => deleteLayout(layout.id)}
+            >
+              <Trash className="h-4 w-4 text-red-400" />
+            </div>
+            <div
+              className="cursor-pointer
+           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
+              onClick={() => moveItemUp(layout.id)}
+            >
+              <ArrowUp className="h-4 w-4" />
+            </div>
+            <div
+              className="cursor-pointer
+           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
+              onClick={() => moveItemDown(layout.id)}
+            >
+              <ArrowDown className="h-4 w-4" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

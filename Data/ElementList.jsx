@@ -51,6 +51,7 @@ export default [
       textAlign: "center",
       fontSize: "22px",
       fontWeight: "normal",
+      textTransform: "uppercase",
     },
     outerStyle: {
       backgroundColor: "#ffffff",
@@ -61,7 +62,7 @@ export default [
     icon: Image,
     type: "Image",
     label: "Image",
-    imageUrl: "/images/placeholder.png",
+    imageUrl: "/placeholder.svg",
     alt: "Image",
     url: "#",
     style: {

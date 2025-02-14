@@ -1,6 +1,8 @@
 import React from "react";
 
 function TextComponent({ style, textarea }) {
+  console.log("Received style:", style);
+
   // Replace newline characters with <br> tags
   const formattedText = textarea.split("\n").map((line, index) => (
     <React.Fragment key={index}>
@@ -12,14 +14,13 @@ function TextComponent({ style, textarea }) {
   // Remove or change text transform style
   const updatedStyle = {
     ...style,
-    textTransform: "none",
     wordWrap: "break-word",
     overflowWrap: "break-word", // Add this line
     whiteSpace: "pre-wrap", // Preserve white spaces and allow wrapping
   };
 
   return (
-    <div>
+    <div className="w-full">
       <h2
         style={{
           ...updatedStyle,
