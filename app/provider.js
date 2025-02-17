@@ -16,16 +16,70 @@ function Provider({ children }) {
   const [emailTemplate, setEmailTemplate] = useState([]);
   const [selectedElement, setSelectedElement] = useState();
 
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const storage = JSON.parse(localStorage.getItem("userDetail"));
+  //     const emailTemplateStorage = JSON.parse(
+  //       localStorage.getItem("emailTemplate") ?? {}
+  //     );
+  //     setEmailTemplate(emailTemplateStorage ?? []);
+  //     if (!storage?.email || !storage) {
+  //     } else {
+  //       setUserDetail(storage);
+  //     }
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (typeof window !== undefined) {
-      const storage = JSON.parse(localStorage.getItem("userDetail"));
-      const emailTemplateStorage = JSON.parse(
-        localStorage.getItem("emailTemplate")
-      );
-      setEmailTemplate(emailTemplateStorage ?? []);
-      if (!storage?.email || !storage) {
-      } else {
-        setUserDetail(storage);
+    if (typeof window !== "undefined") {
+      const storage = localStorage.getItem("userDetail");
+      const emailTemplateStorage = localStorage.getItem("emailTemplate");
+
+      if (storage) {
+        try {
+          const parsedStorage = JSON.parse(storage);
+          if (parsedStorage?.email) {
+            setUserDetail(parsedStorage);
+          }
+        } catch (e) {
+          console.error("Failed to parse userDetail from localStorage", e);
+        }
+      }
+
+      if (emailTemplateStorage && emailTemplateStorage !== "undefined") {
+        try {
+          setEmailTemplate(JSON.parse(emailTemplateStorage) ?? []);
+        } catch (e) {
+          console.error("Failed to parse emailTemplate from localStorage", e);
+          setEmailTemplate([]);
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storage = localStorage.getItem("userDetail");
+      const emailTemplateStorage = localStorage.getItem("emailTemplate");
+
+      if (storage) {
+        try {
+          const parsedStorage = JSON.parse(storage);
+          if (parsedStorage?.email) {
+            setUserDetail(parsedStorage);
+          }
+        } catch (e) {
+          console.error("Failed to parse userDetail from localStorage", e);
+        }
+      }
+
+      if (emailTemplateStorage) {
+        try {
+          setEmailTemplate(JSON.parse(emailTemplateStorage) ?? []);
+        } catch (e) {
+          console.error("Failed to parse emailTemplate from localStorage", e);
+          setEmailTemplate([]);
+        }
       }
     }
   }, []);
@@ -77,7 +131,7 @@ function Provider({ children }) {
 
 export default Provider;
 
-export const useUserDetailContext = () => {
+export const useUserDetail = () => {
   return useContext(UserDetailContext);
 };
 
