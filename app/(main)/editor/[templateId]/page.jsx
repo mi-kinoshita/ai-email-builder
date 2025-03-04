@@ -48,7 +48,7 @@ function Editor() {
           <Settings />
         </div>
       ) : (
-        <div>
+        <div className="flex justify-center items-center h-screen">
           <h2>Please wait...</h2>
         </div>
       )}

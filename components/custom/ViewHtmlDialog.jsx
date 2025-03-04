@@ -12,13 +12,20 @@ import { toast } from "sonner";
 
 function ViewHtmlDialog({ openDialog, htmlCode, closeDialog }) {
   const [copied, setCopied] = useState(false);
+  // Remove 'false' and clean up any extra spaces or newlines
+  const cleanHtmlCode = htmlCode
+    ? htmlCode
+        .replace(/\s?false\s?/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+    : "";
 
   const CopyCode = () => {
-    navigator.clipboard.writeText(htmlCode);
+    navigator.clipboard.writeText(cleanHtmlCode);
     setCopied(true);
     // Revert to the original state after 2 seconds.
     setTimeout(() => setCopied(false), 2000);
-    toast("copied");
+    toast("Copied");
   };
 
   return (
@@ -31,16 +38,11 @@ function ViewHtmlDialog({ openDialog, htmlCode, closeDialog }) {
                 <h2>HTML Email Template</h2>
                 <div className="relative">
                   {copied ? (
-                    <>
-                      <Check className="p-2 bg-gray-100 rounded-sm h-8 w-8" />
-                      {/* <span className="absolute top-[105%] left-1/2 transform -translate-x-1/2 text-xs bg-gray-100 text-gray-500 p-1 shadow-md">
-                        copied
-                      </span> */}
-                    </>
+                    <Check className="p-2 bg-gray-100 rounded-sm h-8 w-8" />
                   ) : (
                     <Copy
-                      className="p-2 bg-gray-100 rounded-sm h-8 w-8 cursor-pointer
-                      hover:scale-105 transition-all hover:bg-gray-200 hover:shadow-sm"
+                      className={`p-2 bg-gray-100 rounded-sm h-8 w-8 cursor-pointer 
+                        hover:scale-105 transition-all hover:bg-gray-200 hover:shadow-sm`}
                       onClick={CopyCode}
                     />
                   )}
@@ -49,8 +51,8 @@ function ViewHtmlDialog({ openDialog, htmlCode, closeDialog }) {
             </DialogTitle>
             <DialogDescription asChild>
               <div className="max-h-[400px] overflow-auto bg-gray-100 rounded-lg p-5">
-                <pre className="whitespace-pre-wrap break-after-all">
-                  <code>{htmlCode}</code>
+                <pre className="whitespace-pre-wrap break-words">
+                  <code>{cleanHtmlCode}</code>
                 </pre>
               </div>
             </DialogDescription>

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+    --color-picton-blue-50: #eef7ff;
+--color-picton-blue-100: #daedff;
+--color-picton-blue-200: #bde1ff;
+--color-picton-blue-300: #90ceff;
+--color-picton-blue-400: #5ab2ff;
+--color-picton-blue-500: #3592fc;
+--color-picton-blue-600: #1f73f1;
+--color-picton-blue-700: #175cde;
+--color-picton-blue-800: #194bb4;
+--color-picton-blue-900: #1a428e;
+--color-picton-blue-950: #152a56;
+}

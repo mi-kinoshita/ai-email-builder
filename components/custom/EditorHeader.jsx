@@ -8,6 +8,8 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
+import logoPic from "@/public/images/logo.png";
+import Link from "next/link";
 
 function EditorHeader({ viewHTMLCode }) {
   const { screenSize, setScreenSize } = useScreenSize();
@@ -32,12 +34,14 @@ function EditorHeader({ viewHTMLCode }) {
   };
   return (
     <div className="p-4 shadow-sm flex justify-between items-center">
-      <Image src={"/logo.svg"} alt="logo" width={200} height={150} />
+      <Link href="/">
+        <Image src={logoPic} alt="logo" width={200} height={150} />
+      </Link>
       <div className="flex gap-3">
         <Button
           variant="ghost"
           onClick={() => setScreenSize("desktop")}
-          className={`${screenSize == "desktop" && "bg-purple-100 text-primary"}`}
+          className={`${screenSize == "desktop" && "bg-[#e1e5f4] text-primary"}`}
         >
           <Monitor />
           Desktop{" "}
@@ -45,7 +49,7 @@ function EditorHeader({ viewHTMLCode }) {
         <Button
           variant="ghost"
           onClick={() => setScreenSize("mobile")}
-          className={`${screenSize == "mobile" && "bg-purple-100 text-primary"}`}
+          className={`${screenSize == "mobile" && "bg-[#e1e5f4] text-primary"}`}
         >
           <Smartphone />
           Mobile
@@ -55,7 +59,7 @@ function EditorHeader({ viewHTMLCode }) {
         <Button
           variant="ghost"
           className="hover:text-primary
-        hover:bg-purple-100"
+        hover:bg-primary-foreground"
           onClick={() => viewHTMLCode(true)}
         >
           <Code />

@@ -13,7 +13,7 @@ function Canvas({ viewHTMLCode, closeDialog }) {
   const htmlRef = useRef();
   const { screenSize, setScreenSize } = useScreenSize();
   const { dragElementLayout, setDragElementLayout } = useDragElementLayout();
-  const { emailTemplate = [], setEmailTemplate } = useEmailTemplate(); // デフォルト値の設定
+  const { emailTemplate = [], setEmailTemplate } = useEmailTemplate();
   const [dragOver, setDragOver] = useState(false);
   const [htmlCode, setHtmlCode] = useState();
 

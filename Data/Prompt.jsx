@@ -12,14 +12,14 @@ Schema example:
       "icon": {},
       "type": "LogoHeader",
       "label": "Logo Header",
-      "imageUrl": "/logo.svg",
+      "imageUrl": "/images/logo.png",
       "alt": "Company Logo",
       "url": "#",
       "style": {
         "backgroundColor": "#f8f9fa",
         "padding": ["10px"],
-        "height": "auto",
-        "width": ["20%"]
+        "height": ["20%"],
+        "width": "auto"
       },
       "outerStyle": {
         "display": "flex",
@@ -226,7 +226,7 @@ Schema example:
 
 - Write meaningful text content with emoji icons if needed.
 
-- For the logo, add the image as "/logo.svg" and for image placeholders add '/images/placeholder.png'.
+- For the logo, add the image as "/images/logo.png" and for image placeholders add '/images/placeholder.png'.
 
 - Provide the response in JSON format only (Return the schema only).
     `,

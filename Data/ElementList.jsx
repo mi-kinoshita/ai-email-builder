@@ -11,7 +11,7 @@ import {
   SquareSplitVertical,
   Text,
   TextSelectionIcon,
-  Twitter,
+  Instagram,
 } from "lucide-react";
 
 export default [
@@ -134,45 +134,46 @@ export default [
       width: "100%",
     },
   },
-  {
-    type: "SocialIcons",
-    icon: Twitter,
-    label: "Social Icons",
-    socialIcons: [
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/2111/2111463.png",
-        url: "",
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/5968/5968852.png",
-        url: "",
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/5968/5968756.png",
-        url: "",
-      },
-    ],
-    options: [
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/2111/2111463.png",
-        url: "",
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/5968/5968852.png",
-        url: "",
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/128/5968/5968756.png",
-        url: "",
-      },
-    ],
-    style: {
-      width: 40,
-      height: 40,
-    },
-    outerStyle: {
-      display: "flex",
-      gap: 15,
-    },
-  },
+  // {
+  //   type: "Social Media",
+  //   icon: Instagram,
+  //   label: "Social Media",
+  //   imageUrl: "/logo.svg",
+  //   socialIcons: [
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/2111/2111463.png",
+  //       url: "",
+  //     },
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/5968/5968852.png",
+  //       url: "",
+  //     },
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/5968/5968756.png",
+  //       url: "",
+  //     },
+  //   ],
+  //   options: [
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/2111/2111463.png",
+  //       url: "",
+  //     },
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/5968/5968852.png",
+  //       url: "",
+  //     },
+  //     {
+  //       icon: "https://cdn-icons-png.flaticon.com/128/5968/5968756.png",
+  //       url: "",
+  //     },
+  //   ],
+  //   style: {
+  //     width: 40,
+  //     height: 40,
+  //   },
+  //   outerStyle: {
+  //     display: "flex",
+  //     gap: 15,
+  //   },
+  // },
 ];

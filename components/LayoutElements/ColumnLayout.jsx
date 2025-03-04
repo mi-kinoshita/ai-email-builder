@@ -10,7 +10,7 @@ import TextComponent from "../custom/Element/TextComponent";
 import ImageComponent from "../custom/Element/ImageComponent";
 import LogoComponent from "../custom/Element/LogoComponent";
 import DividerComponent from "../custom/Element/DividerComponent";
-import { ArrowDown, ArrowUp, Trash } from "lucide-react";
+import { ChevronDown, ChevronUp, Trash } from "lucide-react";
 
 function ColumnLayout({ layout }) {
   const [dragOver, setDragOver] = useState();
@@ -97,7 +97,7 @@ function ColumnLayout({ layout }) {
           gridTemplateColumns: `repeat(${layout?.numOfCol},1fr)`,
           gap: "0px",
         }}
-        className={`${selectedElement?.layout?.id == layout?.id && "border border-dashed border-blue-500"}`}
+        className={`${selectedElement?.layout?.id == layout?.id && "border border-[#5f77cb]"}`}
       >
         {Array.from({ length: layout?.numOfCol }).map((_, index) => (
           <div
@@ -105,7 +105,7 @@ function ColumnLayout({ layout }) {
             className={`justify-center items-center p-0 m-0 flex h-full w-full cursor-pointer
               ${!layout?.[index]?.type && "bg-gray-100 border border-dashed "} 
               ${index == dragOver?.index && dragOver?.columnId && "bg-green-100"}
-              ${selectedElement?.layout?.id == layout?.id && selectedElement?.index == index && "border-blue-500 border-2"}`}
+              ${selectedElement?.layout?.id == layout?.id && selectedElement?.index == index && "border-primary border-2"}`}
             onDragOver={(event) => onDragOverHandle(event, index)}
             onDrop={onDropHandle}
             onClick={() => setSelectedElement({ layout: layout, index: index })}
@@ -116,25 +116,27 @@ function ColumnLayout({ layout }) {
         {selectedElement?.layout?.id == layout?.id && (
           <div className="absolute -right-10">
             <div
-              className="cursor-pointer
-           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
+              className="cursor-pointer mb-1
+           bg-white flex-col border border-gray-300 p-2 rounded-sm hover:scale-105 transition-all hover:shadow-sm"
               onClick={() => deleteLayout(layout.id)}
             >
               <Trash className="h-4 w-4 text-red-400" />
             </div>
-            <div
-              className="cursor-pointer
-           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
-              onClick={() => moveItemUp(layout.id)}
-            >
-              <ArrowUp className="h-4 w-4" />
-            </div>
-            <div
-              className="cursor-pointer
-           bg-gray-100 p-2 rounded-full hover:scale-105 transition-all hover:shadow-sm"
-              onClick={() => moveItemDown(layout.id)}
-            >
-              <ArrowDown className="h-4 w-4" />
+            <div className="flex-col border border-gray-300 p-1 rounded-sm bg-white">
+              <div
+                className="cursor-pointer border-b border-gray-300
+           p-1 rounded-sm hover:scale-105 transition-all hover:shadow-sm"
+                onClick={() => moveItemUp(layout.id)}
+              >
+                <ChevronUp className="h-4 w-4" />
+              </div>
+              <div
+                className="cursor-pointer
+           p-1 rounded-sm hover:scale-105 transition-all hover:shadow-sm"
+                onClick={() => moveItemDown(layout.id)}
+              >
+                <ChevronDown className="h-4 w-4" />
+              </div>
             </div>
           </div>
         )}

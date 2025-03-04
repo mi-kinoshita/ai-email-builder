@@ -5,12 +5,22 @@ import { Button } from "../ui/button";
 import SignInButton from "./SignInButton";
 import { useUserDetail, useUserDetailContext } from "@/app/provider";
 import Link from "next/link";
+import logoPic from "@/public/images/logo.png";
 
 function Header() {
   const { userDetail, setUserDetail } = useUserDetail();
   return (
     <div className="flex justify-between items-center p-4 shadow-sm px-10">
-      <Image src={"/logo.svg"} alt="logo" width={180} height={140} />
+      <Link href={"/"}>
+        <Image
+          src={logoPic}
+          alt="logo"
+          style={{
+            width: "auto",
+            height: "auto",
+          }}
+        />
+      </Link>
 
       <div>
         {userDetail?.email ? (
