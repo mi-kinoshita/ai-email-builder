@@ -9,6 +9,7 @@ import logoPic from "@/public/images/logo.png";
 
 function Header() {
   const { userDetail, setUserDetail } = useUserDetail();
+
   return (
     <div className="flex justify-between items-center p-4 shadow-sm px-10">
       <Link href={"/"}>
