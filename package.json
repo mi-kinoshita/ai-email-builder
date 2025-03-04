@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@jridgewell/sourcemap-codec": "^1.5.0",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-scroll-area": "^1.2.3",
@@ -20,6 +21,7 @@
     "@radix-ui/react-toggle": "^1.1.2",
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@react-oauth/google": "^0.12.1",
+    "@rollup/plugin-inject": "^5.0.5",
     "@shadcn/ui": "^0.0.4",
     "@tanstack/react-table": "^8.21.2",
     "axios": "^1.7.9",
@@ -27,6 +29,8 @@
     "clsx": "^2.1.1",
     "convex": "^1.18.2",
     "dedent": "^1.5.3",
+    "glob": "^11.0.1",
+    "lru-cache": "^11.0.2",
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
     "next-themes": "^0.4.4",
@@ -38,6 +42,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.8",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }
