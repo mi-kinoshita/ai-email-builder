@@ -110,7 +110,7 @@ function Settings() {
 
   return (
     <div className="p-5 flex flex-col gap-4">
-      <h2 className="font-bold text-xl">Settings</h2>
+      <h2 className="border-b-2 pb-1">Settings</h2>
       {element?.imageUrl && (
         <ImagePreview
           label={"Image Preview"}

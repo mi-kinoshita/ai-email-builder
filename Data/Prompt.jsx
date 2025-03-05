@@ -10,8 +10,8 @@ Schema example:
   {
     "0": {
       "icon": {},
-      "type": "LogoHeader",
-      "label": "Logo Header",
+      "type": "Logo",
+      "label": "Logo",
       "imageUrl": "/images/logo.png",
       "alt": "Company Logo",
       "url": "#",
@@ -126,57 +126,9 @@ Schema example:
   {
     "0": {
       "icon": {},
-      "type": "Image",
-      "label": "Image",
-      "imageUrl": "/image.png",
-      "alt": "Customer Review",
-      "url": "#",
-      "style": {
-        "backgroundColor": "#ffffff",
-        "padding": "10px",
-        "height": "auto",
-        "width": ["45%"],
-        "margin": "0px",
-        "borderRadius": "10px"
-      },
-      "outerStyle": {
-        "display": "flex",
-        "width": "100%",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "backgroundColor": "#fff"
-      },
-      "id": 1737498314120
-    },
-    "1": {
-      "icon": {},
       "type": "Text",
       "label": "Text",
-      "textarea": "⭐⭐⭐⭐⭐\n\n\"This product exceeded my expectations! It's incredibly easy to use and has already saved me so much time. I highly recommend it!\" - Jane Doe",
-      "style": {
-        "backgroundColor": "#fff",
-        "color": "#6c757d",
-        "padding": "10px",
-        "textAlign": ["left"],
-        "fontSize": ["14px"],
-        "fontWeight": "normal",
-        "lineHeight": "1.4",
-        "textTransform": ["none"]
-      },
-      "id": 1737498315970
-    },
-    "label": "2 Column",
-    "type": "column",
-    "numOfCol": 2,
-    "icon": {},
-    "id": 1737498304253
-  },
-  {
-    "0": {
-      "icon": {},
-      "type": "Text",
-      "label": "Text",
-      "textarea": "© 2024 Company Name. All rights reserved.",
+      "textarea": "© 2025 Company Name. All rights reserved.",
       "style": {
         "backgroundColor": "#f8f9fa",
         "color": "#868e96",
@@ -192,42 +144,24 @@ Schema example:
       },
       "id": 1737499072555
     },
-    "1": {
-      "icon": {},
-      "type": "Text",
-      "label": "Text",
-      "textarea": "<a href=\"#\" style=\"color: #007bff; text-decoration: none;\">Unsubscribe</a>",
-      "style": {
-        "backgroundColor": "#f8f9fa",
-        "color": "#868e96",
-        "padding": "10px",
-        "textAlign": ["center"],
-        "fontSize": ["12px"],
-        "fontWeight": "normal",
-        "textTransform": ["none"]
-      },
-      "outerStyle": {
-        "backgroundColor": "#f8f9fa",
-        "width": "100%"
-      },
-      "id": 1737499072556
-    },
-    "label": "2 Column",
+    "label": "Column",
     "type": "column",
-    "numOfCol": 2,
+    "numOfCol": 1,
     "icon": {},
     "id": 1737498950655
   }
 ]
 
-- Add more columns and content with types like Images, Button, Text, Logo, LogoHeader, and other options if needed.
+- Add more columns and content with types like Images, Button, Text, Logo, and other options if needed.
 
 - Use appropriate types when needed, do not exactly copy the schema as it is. Make changes depending on the email template topic.
 
 - Write meaningful text content with emoji icons if needed.
 
-- For the logo, add the image as "/images/logo.png" and for image placeholders add '/images/placeholder.png'.
+- For the logo, add the image as "/images/streetwearlogo.png" and for image placeholders add '/images/fashionduo.jpeg'.
 
 - Provide the response in JSON format only (Return the schema only).
+
+- Make it in 30 seconds.
     `,
 };

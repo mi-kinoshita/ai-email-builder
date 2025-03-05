@@ -4,6 +4,7 @@ import { Sparkles } from "lucide-react";
 import AIInputBox from "@/components/custom/AIInputBox";
 import AISelectBox from "@/components/custom/AISelectBox";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function Create() {
   return (
@@ -26,16 +27,16 @@ function Create() {
                 stroke="#007BFF"
               />
             </TabsTrigger>
-            <TabsTrigger value="SCRATCH">Start from Scratch</TabsTrigger>
+            {/* <TabsTrigger value="SCRATCH">Start from Scratch</TabsTrigger> */}
           </TabsList>
           <TabsContent value="AI">
             <AIInputBox />
           </TabsContent>
           <TabsContent value="SCRATCH">
             <div>
-              {/* <Link href="/editor">
+              <Link href="/editor">
                 <Button className="w-full mt-7">Create New Email</Button>
-              </Link> */}
+              </Link>
             </div>
           </TabsContent>
         </Tabs>

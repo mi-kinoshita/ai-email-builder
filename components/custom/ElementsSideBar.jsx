@@ -28,10 +28,10 @@ function ElementsSideBar() {
   };
 
   return (
-    <div className="p-1 h-screen shadow-sm">
+    <div className="p-5 h-screen shadow-sm">
       <div className="flex space-x-1 border-b-2 border-gray-100">
         <button
-          className={`px-2 py-2 ${
+          className={`px-1 py-1 ${
             activeTab === "elements" ? "border-b-2 border-primary" : ""
           }`}
           onClick={() => setActiveTab("elements")}
@@ -39,7 +39,7 @@ function ElementsSideBar() {
           Design
         </button>
         <button
-          className={`px-2 py-2 ${
+          className={`px-1 py-1 ${
             activeTab === "layouts" ? "border-b-2 border-primary" : ""
           }`}
           onClick={() => setActiveTab("layouts")}
