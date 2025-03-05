@@ -10,9 +10,9 @@ function Hero() {
   const { userDetail, setUserDetail } = useUserDetail();
   return (
     <div
-      className="px-10 md:px-28 lg:px-44 xl:px-56
+      className="px-5 md:px-28 lg:px-44 xl:px-56
     flex flex-col items-center
-    mt-24
+    mt-10
     "
     >
       <h2
@@ -45,7 +45,7 @@ function Hero() {
         </div>
       </div>
       <Image
-        src="/images/landing.png"
+        src="/images/swiftmailss.png"
         alt="landing"
         width={1000}
         height={800}
