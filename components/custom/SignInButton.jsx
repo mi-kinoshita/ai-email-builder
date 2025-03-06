@@ -4,14 +4,17 @@ import { Button } from "../ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useMutation } from "convex/react";
+import { useForm } from "react-hook-form";
 import { api } from "@/convex/_generated/api";
 
 function SignInButton() {
+  const { handleSubmit } = useForm();
   const CreateUser = useMutation(api.users.CreateUser);
 
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       console.log(tokenResponse);
+
       const userInfo = await axios.get(
         "https://www.googleapis.com/oauth2/v3/userinfo",
         { headers: { Authorization: "Bearer " + tokenResponse?.access_token } }
@@ -37,9 +40,16 @@ function SignInButton() {
     },
     onError: (errorResponse) => console.log(errorResponse),
   });
+
+  const onSubmit = () => {
+    googleLogin();
+  };
+
   return (
     <div>
-      <Button onClick={googleLogin}>Get Started</Button>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Button type="submit">Get Started</Button>
+      </form>
     </div>
   );
 }
