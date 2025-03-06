@@ -5,11 +5,13 @@ import DemoAIInputBox from "@/components/custom/DemoAIInputBox";
 import Header from "@/components/custom/Header";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ContactDialog from "@/components/custom/ContactDialog";
 
 function Demo() {
   return (
     <div>
       <Header />
+      <ContactDialog />
       <div className="px-10 md:px-28 lg:px-64 xl:px-72 mt-20">
         <div className="flex items-center flex-col">
           <h2 className="font-bold text-3xl text-primary">

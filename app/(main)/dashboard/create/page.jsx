@@ -5,6 +5,7 @@ import AIInputBox from "@/components/custom/AIInputBox";
 import AISelectBox from "@/components/custom/AISelectBox";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ContactDialog from "@/components/custom/ContactDialog";
 
 function Create() {
   return (
@@ -41,6 +42,7 @@ function Create() {
           </TabsContent>
         </Tabs>
       </div>
+      <ContactDialog />
     </div>
   );
 }

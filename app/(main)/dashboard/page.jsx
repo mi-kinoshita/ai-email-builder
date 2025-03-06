@@ -1,5 +1,6 @@
 "use client";
 import { useUserDetail } from "@/app/provider";
+import ContactDialog from "@/components/custom/ContactDialog";
 import EmailTemplateList from "@/components/custom/EmailTemplateList";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -18,6 +19,7 @@ function Dashboard() {
           </Link>
         </div>
         <EmailTemplateList />
+        <ContactDialog />
       </div>
     </div>
   );

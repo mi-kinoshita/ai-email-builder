@@ -1,6 +1,7 @@
 "use client";
 import { useEmailTemplate, useUserDetail } from "@/app/provider";
 import Canvas from "@/components/custom/Canvas";
+import ContactDialog from "@/components/custom/ContactDialog";
 import EditorHeader from "@/components/custom/EditorHeader";
 import ElementsSideBar from "@/components/custom/ElementsSideBar";
 import Settings from "@/components/custom/Settings";
@@ -25,6 +26,7 @@ function Editor() {
           <h2>Please wait...</h2>
         </div>
       )}
+      <ContactDialog />
     </div>
   );
 }
