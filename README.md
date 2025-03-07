@@ -1,6 +1,8 @@
 # Swiftmail AI 📨 Made with Next.js
 
-<img src="public/images/swiftmailss.png" width="300px">
+<div style="text-align: center">
+<img src="public/images/swiftmailss.png" width="auto" alt="ss" hspace="10" vspace="5">
+</div>
 
 Try in your browser: https://ai-email-builder-omega.vercel.app/
 
